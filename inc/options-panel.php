@@ -13,7 +13,7 @@ if ( ! class_exists( 'Redux' ) ) {
 }
 
 // This is your option name where all the Redux data is stored.
-$opt_name = 'qwetheme_options';  // YOU MUST CHANGE THIS.  DO NOT USE 'redux_demo' IN YOUR PROJECT!!!
+$opt_name = 'foundation_elementor';  // YOU MUST CHANGE THIS.  DO NOT USE 'redux_demo' IN YOUR PROJECT!!!
 
 // Uncomment to disable demo mode.
 /* Redux::disable_demo(); */  // phpcs:ignore Squiz.PHP.CommentedOutCode
@@ -119,7 +119,7 @@ $args = array(
 	'disable_save_warn'         => false,
 
 	// Order where the menu appears in the admin area. If there is any conflict, something will not show. Warning.
-	'page_priority'             => null,
+	'page_priority'             => 90,
 
 	// For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters.
 	'page_parent'               => 'themes.php',
@@ -314,83 +314,119 @@ Redux::set_help_sidebar( $opt_name, $content );
  * ---> START SECTIONS
  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // -> START Basic Fields
-Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'Global Options', 'your-textdomain-here' ),
-		'id'               => 'global',
-		'desc'             => esc_html__( 'Redux in the house.', 'your-textdomain-here' ),
-		'customizer_width' => '400px',
-		'icon'             => 'el el-home',
-		
-	)
-);
-
-Redux::set_section(
-	$opt_name,
-	array(
-		'title'            => esc_html__( 'Footer Data', 'your-textdomain-here' ),
-		'id'               => 'global-footer',
-		'subsection'       => true,
-		'desc'             => esc_html__( 'Redux options for footer', 'your-textdomain-here' ),
-		'customizer_width' => '400px',
-		'fields'           => array (
-			array(
-				'title' => esc_html__( 'Title one', 'your-textdomain-here' ),
-				'id'    => 'titleone',
-				'type'  => 'text',
-				'default' => '',
-			),
-			array(
-				'title' => esc_html__( 'Descriptions for Title#1', 'your-textdomain-here' ),
-				'id'    => 'title1desc',
-				'type'  => 'text',
-				'default' => '',
-			),
-			array(
-				'title' => esc_html__( 'Title two', 'your-textdomain-here' ),
-				'id'    => 'titletwo',
-				'type'  => 'text',
-				'default' => '',
-			),
-			array(
-				'title' => esc_html__( 'Title three', 'your-textdomain-here' ),
-				'id'    => 'titlethree',
-				'type'  => 'text',
-				'default' => '',
-			),
-		    array(
-				'title' => esc_html__( 'Descriptions for Title#3', 'your-textdomain-here' ),
-				'id'    => 'title3desc',
-				'type'  => 'text',
-				'default' => '',
-			),
-			array(
-				'title' => esc_html__( 'Title four', 'your-textdomain-here' ),
-				'id'    => 'titlefour',
-				'type'  => 'text',
-				'default' => '',
-			),
-			array(
-				'title' => esc_html__( 'Mailform widgets', 'your-textdomain-here' ),
-				'id'    => 'mailformwidgets',
-				'type'  => 'text',
-				'default' => '',
-			),
-		)
-));
 
 
 
 
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/checkbox.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/radio.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/sortable.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/text.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/multi-text.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/password.php';
-require_once Redux_Core::$dir . '../sample/sections/basic-fields/textarea.php';
+
+Redux::setSection( $opt_name, array(
+        'title'            => __( 'Global Options', 'redux-framework-demo' ),
+        'id'               => 'global',
+        'desc'             => __( 'Some descriptions', 'redux-framework-demo' ),
+        'customizer_width' => '400px',
+        'icon'             => 'el el-home'
+    ) );
+
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Footer Data', 'redux-framework-demo' ),
+        'id'               => 'global-footer',
+        'subsection'       => true,
+        'customizer_width' => '450px',
+        'desc'             => __( 'Data for footer', 'redux-framework-demo' ),
+        'fields'           => array(
+            array(
+                'id'       => 'titleone',
+                'type'     => 'text',
+                'title'    => __( 'Widget Title #1', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'titletwo',
+                'type'     => 'text',
+                'title'    => __( 'Widget Title #1', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'titlethree',
+                'type'     => 'text',
+                'title'    => __( 'Widget Title #1', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+
+            array(
+                'id'       => 'descone',
+                'type'     => 'text',
+                'title'    => __( 'Widget Description', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'desctwo',
+                'type'     => 'text',
+                'title'    => __( 'Widget Description', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'titlefour',
+                'type'     => 'text',
+                'title'    => __( 'Widget Title #4', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'widgetshortcode',
+                'type'     => 'text',
+                'title'    => __( 'Widget Title #4', 'redux-framework-demo' ),
+                'default'  => '',
+            ),
+        )
+    ) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

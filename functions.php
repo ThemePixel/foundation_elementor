@@ -190,6 +190,17 @@ add_action( 'wp_enqueue_scripts', 'foundation_elementor_scripts' );
 
 
 
+
+
+$opt_name = 'foundation_elementor'; # TODO - Replace with your opt_name
+function remove_panel_css() {
+  wp_dequeue_style( 'redux-admin-css' );
+}
+add_action( 'redux/page/' . $opt_name . '/enqueue', 'remove_panel_css' );
+
+
+
+
 //Fix Menu class for anchor
 function add_link_atts($atts) {
 	$atts['class'] = "nav-link";
@@ -197,7 +208,8 @@ function add_link_atts($atts) {
   }
      
 
-
+//Redux Theme Options Config
+require get_template_directory() . '/inc/options-panel.php';
 
 
 

@@ -1,15 +1,17 @@
+<?php global $foundation_elementor; ?>
 <footer class="site-footer">
-      <div class="container">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-8">
-                <h2 class="footer-heading mb-4">About Us</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque facere laudantium magnam voluptatum autem. Amet aliquid nesciunt veritatis aliquam.</p>
-              </div>
-              <div class="col-md-4 ml-auto">
-                <h2 class="footer-heading mb-4">Features</h2>
-                <?php
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2 class="footer-heading mb-4"><?php if($foundation_elementor['titleone']){echo esc_attr($foundation_elementor['titleone']); } ?></h2>
+                        <p><?php if($foundation_elementor['descone']){echo esc_attr($foundation_elementor['descone']); } ?></p>
+                    </div>
+                    <div class="col-md-4 ml-auto">
+                        <h2 class="footer-heading mb-4"><?php if($foundation_elementor['titletwo']){echo esc_attr($foundation_elementor['titletwo']); } ?></h2>
+
+                       <?php
                         wp_nav_menu( array(
                             'theme_location' => 'footer-menu',
                             'menu_id'        => 'footer-menu',
@@ -17,61 +19,42 @@
                             'container' => ''
                         ) );
                         ?>
-              </div>
-              
-            </div>
-          </div>
-          <div class="col-md-4 ml-auto">
+                    </div>
 
-            <form class="mb-5">
-              <div class="mb-5">
-                <h2 class="footer-heading mb-4">Some Paragraph</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat nostrum libero iusto dolorum vero atque aliquid.</p>
-              </div>
-              <h2 class="footer-heading mb-4">Subscribe to Newsletter</h2>
-              <form action="#" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control border-secondary text-white bg-transparent" placeholder="Enter Email" aria-label="Enter Email" aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Subscribe</button>
-                  </div>
                 </div>
-              </form>
+            </div>
+            <div class="col-md-4 ml-auto">
 
+                <div class="mb-5">
+                    <div class="mb-5">
+                        <h2 class="footer-heading mb-4"><?php if($foundation_elementor['titlethree']){echo esc_attr($foundation_elementor['titlethree']); } ?></h2>
+                        <p><?php if($foundation_elementor['desctwo']){echo esc_attr($foundation_elementor['desctwo']); } ?></p>
+                    </div>
+                    <h2 class="footer-heading mb-4"><?php if($foundation_elementor['titlefour']){echo esc_attr($foundation_elementor['titlefour']); } ?></h2>
+                    <?php if($foundation_elementor['widgetshortcode']) echo do_shortcode(esc_attr($foundation_elementor['widgetshortcode'])); ?>
+                </div>
 
-              <h2 class="footer-heading mb-4">Follow Us</h2>
+                <h2 class="footer-heading mb-4">Follow Us</h2>
                 <a href="#about-section" class="smoothscroll pl-0 pr-3"><span class="icon-facebook"></span></a>
                 <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
                 <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                 <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
             </div>
-          </div>
         </div>
         <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+            <div class="col-md-12">
+                <div class="border-top pt-5">
+                    <p>
+                        <?php esc_html_e('All rights reserved','foundation_elementor');?>
+                    </p>
+                </div>
             </div>
-          </div>
-          
+
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-
-
-
-
-
-
-
-
-
-
+</div>
 
 
 <?php wp_footer(); ?>
