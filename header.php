@@ -48,6 +48,7 @@
               <nav class="site-navigation text-center ml-auto" role="navigation">
 
 			  <?php
+     add_filter( 'nav_menu_link_attributes', 'add_link_atts'); 
 			 wp_nav_menu(
 				array(
 					'theme_location' => 'header-menu',
@@ -56,6 +57,7 @@
 					'container'      => '' //to del div
 				)
 			);    
+     remove_filter( 'nav_menu_link_attributes', 'add_link_atts');
                  ?>
 
             </nav>

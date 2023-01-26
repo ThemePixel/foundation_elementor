@@ -9,13 +9,14 @@
               </div>
               <div class="col-md-4 ml-auto">
                 <h2 class="footer-heading mb-4">Features</h2>
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Testimonials</a></li>
-                  <li><a href="#">Terms of Service</a></li>
-                  <li><a href="#">Privacy</a></li>
-                  <li><a href="#">Contact Us</a></li>
-                </ul>
+                <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer-menu',
+                            'menu_id'        => 'footer-menu',
+                            'menu_class'  => 'list-unstyled',
+                            'container' => ''
+                        ) );
+                        ?>
               </div>
               
             </div>

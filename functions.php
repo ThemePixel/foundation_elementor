@@ -50,6 +50,7 @@ function foundation_elementor_setup() {
 	register_nav_menus(
 		array(
 			'header-menu' => esc_html__( 'Header Menu', 'foundation-elementor' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'foundation-elementor' ),
 		)
 	);
 
@@ -194,7 +195,7 @@ function add_link_atts($atts) {
 	$atts['class'] = "nav-link";
 	return $atts;
   }
-  add_filter( 'nav_menu_link_attributes', 'add_link_atts');
+     
 
 
 
