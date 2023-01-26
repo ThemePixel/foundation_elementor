@@ -49,7 +49,7 @@ function foundation_elementor_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'foundation-elementor' ),
+			'header-menu' => esc_html__( 'Header Menu', 'foundation-elementor' ),
 		)
 	);
 
@@ -173,36 +173,10 @@ function foundation_elementor_scripts() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//wp_enqueue_style( 'foundation-elementor-style', get_stylesheet_uri(), array(), _S_VERSION );
 	//wp_style_add_data( 'foundation-elementor-style', 'rtl', 'replace' );
 
-	//wp_enqueue_script( 'foundation-elementor-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
-
-
-
-
-
-
-
-
-
-
-
+	//wp_enqueue_script( 'foundation-elementor-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true )
 
 
 
@@ -215,6 +189,12 @@ add_action( 'wp_enqueue_scripts', 'foundation_elementor_scripts' );
 
 
 
+//Fix Menu class for anchor
+function add_link_atts($atts) {
+	$atts['class'] = "nav-link";
+	return $atts;
+  }
+  add_filter( 'nav_menu_link_attributes', 'add_link_atts');
 
 
 
