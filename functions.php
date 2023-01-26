@@ -212,6 +212,9 @@ function add_link_atts($atts) {
 require get_template_directory() . '/inc/options-panel.php';
 
 
+//TGM Script
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require get_template_directory() . '/inc/tgm-register.php';
 
 
 
